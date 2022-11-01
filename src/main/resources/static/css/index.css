@@ -1,0 +1,80 @@
+.li{
+    padding: 25px;
+}
+.soundButtonFilesPage{
+    margin-left: 25px;
+}
+
+.navbar-nav{
+    margin-left: 25px;
+}
+
+.front-content{
+    text-align: justify;
+    color: #ffffff;
+    padding-top: 255px;
+    margin-left: -94px;
+}
+.front-content-title{
+    font-size: 75px;
+    padding-right: 523px;
+    margin-top: -28px;
+}
+.front-content-paragraph{
+    padding-right: 984px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 19px;
+    letter-spacing: -0.2px;
+    word-spacing: -5px;
+    color: #ffffff;
+    font-weight: 400;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+
+.front-content-button{
+    margin-left: -33px;
+    margin-top: 33px;
+}
+
+.tryFree{
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
+    height: 76px;
+}
+li a:hover{
+    color: white;
+    border-radius: 15px;
+    border: 1px solid #b0b0b0;
+}
+
+body {
+    background: url('/makingMusicBackground.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+/*.nav-item{*/
+/*    display: flex;*/
+/*    width: 100%;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    background: #303947;*/
+/*    padding: 30px;*/
+/*}*/
+/*a{*/
+/*    display: inline-flex;*/
+/*    padding: 20px 30px;*/
+/*    color: #fff;*/
+/*    text-decoration: none;*/
+/*    transition: all 200ms;*/
+/*}*/

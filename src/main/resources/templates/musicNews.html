@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/musicNews.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 69px">
+    <div class="container-fluid" style="background-color: #121214; border-bottom: 2px solid #ccc; border-top: 2px solid #ccc;">
+        <div class="collapse navbar-collapse">
+            <a class="navbar-brand mt-2 mt-2 mt-lg-0" href="/" style="color: #b7b7b7">Sound Library</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <div class="newsButtonNewsPage">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/music-news}" style="color: #ffffff">News</a>
+                    </li>
+                </div>
+                <div class="soundButtonNewsPage">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/upload-files}" style="color: #b7b7b7">Upload</a>
+                    </li>
+                </div>
+                <div class="soundButtonNewsPage">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/list-files}" style="color: #b7b7b7">Sounds</a>
+                    </li>
+                </div>
+                <div sec:authorize="hasAuthority('ADMIN')">
+                    <div class="soundButtonFilesPage">
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/list-files-unapproved}" style="color: #b7b7b7">Approve Files</a>
+                        </li>
+                    </div>
+                </div>
+            </ul>
+        </div>
+        <div class="d-flex align-items-center">
+            <div style="padding-top: 20px; padding-right: 15px">
+                <p style="color: #ffffff">
+                    Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+                </p>
+            </div>
+            <form th:action="@{/logout}" method="post">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-arrow-circle-right fa-lg"></i>Sign Out
+                </button>
+            </form>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </div>
+    </div>
+    <div class="container-my-5">
+        <footer class="text-center fixed-bottom" style="background-color: #121214">
+            <div style="color: #ffffff">@2022 Copyright: Aleksej Krusharski</div>
+        </footer>
+    </div>
+</nav>
+<form>
+    <div class="news-item" th:each="article: ${listMusicNews.articles}" style="background-color: #ffffff">
+        <div class="text-center">
+            <img class="news-img img-fluid" th:src="${article.urlToImage}" alt="Responsive image">
+        </div>
+        <h3>
+            <a th:text="${article.title}"></a>
+        </h3>
+        <p th:text="${article.description}"></p>
+        <a th:href="${article.url}">Read more</a>
+    </div>
+</form>
+
+</body>
+</html>

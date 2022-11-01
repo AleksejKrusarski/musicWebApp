@@ -1,0 +1,159 @@
+#myInput {
+    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+    background-position: 5px 10px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    background-size: 30px;
+    width: 450px; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-left: 845px;
+    margin-bottom: 5px; /* Add some space below the input */
+    border-radius: 15px;
+}
+
+#myTable {
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Full-width */
+    border: 1px solid #ddd; /* Add a grey border */
+    font-size: 18px; /* Increase font-size */
+}
+
+#myTable th, #myTable td {
+    text-align: left; /* Left-align text */
+    padding: 12px; /* Add padding */
+}
+
+#myTable tr {
+    /* Add a bottom border to all table rows */
+    border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header{
+    /* Add a grey background color to the table header and on hover */
+    background-color: #f1f1f1;
+}
+
+td{
+    vertical-align: middle;
+    height: 50px;
+}
+
+body {
+    background: url('/productionBackgroundBlur.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    /*filter: blur(8px);*/
+    /*-webkit-filter: blur(8px);*/
+}
+
+.soundButtonFilesPage{
+    margin-left: -25px;
+}
+
+.soundTable{
+    margin-top: 17px;
+}
+
+.soundTextUpload{
+    margin-left: 82px;
+    margin-top: -32px;
+    font-size: 19px;
+}
+
+.soundFileUpload{
+    margin-bottom: 16px;
+    margin-top: 1px;
+    color: #ffffff;
+}
+
+.soundFileUploadButton{
+    margin-top: 10px;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
+    height: 76px;
+}
+
+.container{
+    max-width: 1205px;
+}
+li a:hover{
+    color: white;
+    border-radius: 15px;
+    border: 1px solid #b0b0b0;
+}
+
+li a{
+    color: #bebaba;
+}
+
+li{
+    padding: 25px;
+}
+
+table th.first {visibility: hidden}
+
+.popup{
+    background: #fff;
+    border-radius: 15px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 80px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    z-index: 1000;
+}
+
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%)scale(1);
+}
+
+.popup img{
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgb(0, 0, 0, 0.2);
+}
+.popup h2{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+.popup button{
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: #6fd649;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button-value{
+    border: 1px solid deepskyblue;
+    padding: 1em 2.2em;
+    border-radius: 3em;
+    background-color: #ffffff;
+    color: black;
+    cursor: pointer;
+}
+.active {
+    background-color: deepskyblue;
+    color: #ffffff;
+}
+
+
+

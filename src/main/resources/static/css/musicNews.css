@@ -1,0 +1,50 @@
+body {
+    background: url('/musicEquipmentBackgroundBlur.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    /*filter: blur(8px);*/
+    /*-webkit-filter: blur(8px);*/
+}
+
+.soundButtonNewsPage{
+    margin-left: -25px;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
+    width: 100%;
+    height: 76px;
+}
+
+.container{
+    max-width: 1027px;
+}
+
+li a:hover{
+    color: white;
+    border-radius: 15px;
+    border: 1px solid #b0b0b0;
+}
+
+li a{
+    color: #bebaba;
+}
+
+li{
+    padding: 25px;
+}
+
+.news-item{
+    width: 1000px;
+    padding: 20px;
+    border: 1px solid #f1e3e3;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+}
+
+.news-img{
+    width: 500px;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>All Users</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse">
+            <a class="navbar-brand mt-2 mt-2 mt-lg-0">LibMusic</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/list_users}">Sounds</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/list_files}">Files</a>
+                </li>
+            </ul>
+        </div>
+        <div class="d-flex align-items-center">
+            <div style="padding-top: 20px; padding-right: 15px">
+                <p>
+                    Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+                </p>
+            </div>
+                <form th:action="@{/logout}" method="post">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-arrow-circle-right fa-lg"></i>Sign Out
+                    </button>
+                </form>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </div>
+    </div>
+</nav>
+
+<div class="container text-center">
+    <div>
+        <h1>List of All Users</h1>
+    </div>
+    <div>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>User ID</th>
+                <th>E-mail</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="user: ${listUsers}">
+                <td th:text="${user.id}">User ID</td>
+                <td th:text="${user.email}">Email</td>
+                <td th:text="${user.firstName}">First Name</td>
+                <td th:text="${user.lastName}">Last Name</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<form id="form">
+    Choose file to upload:
+    <input type="file" id="file" accept=".wav, .mp3" multiple><br>
+    <button type="submit">Upload sound</button>
+</form>
+<script>
+    document.getElementById('form').addEventListener('submit', function (e){
+      e.preventDefault();
+
+      const userFile = document.getElementById('file').files[0];
+
+      const formData = new FormData();
+      formData.append('user-file', userFile);
+
+      fetch('http://localhost:8080/upload', {
+          method: "POST",
+          body: formData,
+      })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
+    })
+</script>
+
+<div class="container text-center">
+    Load Audio file:
+    <input id="audio_file" type="file" accept="audio/*"/>
+        <audio controls id="audio_player"></audio>
+    <div>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>File ID</th>
+                <th>Data</th>
+                <th>Name</th>
+                <th>Type</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="file: ${userFile}">
+                <td th:text="${userFile.id}">File ID</td>
+                <td th:text="${userFile.data}">Data</td>
+                <td th:text="${userFile.name}">Name</td>
+                <td th:text="${userFile.type}">Type</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="container-my-5">
+    <footer class="text-center fixed-bottom" style="background-color: darkgray">
+        @2022 Copyright: Aleksej Krusharski
+    </footer>
+</div>
+
+<script src="js/audioFunctionality.js"></script>
+
+</body>
+</html>
