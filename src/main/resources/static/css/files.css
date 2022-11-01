@@ -54,10 +54,10 @@ body {
 }
 
 .categoryButtons{
-    margin-right: 820px;
+    margin-right: 775px;
     margin-left: -30px;
     margin-bottom: 8px;
-    margin-top: -64px;
+    margin-top: -60px;
 }
 
 .soundTable{
@@ -147,14 +147,43 @@ table th.first {visibility: hidden}
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
+/*.button-value{*/
+/*    border: 1px solid deepskyblue;*/
+/*    padding: 1em 2.2em;*/
+/*    border-radius: 3em;*/
+/*    background-color: #ffffff;*/
+/*    color: black;*/
+/*    cursor: pointer;*/
+/*}*/
+
 .button-value{
-    border: 1px solid deepskyblue;
-    padding: 1em 2.2em;
-    border-radius: 3em;
+    position: relative;
+    top: 50%;
     background-color: #ffffff;
-    color: black;
-    cursor: pointer;
+    color: #0a0a23;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    min-height: 30px;
+    min-width: 120px;
 }
+
+.button-value:hover{
+    background-color: #ffbf00;
+    transition: 0.7s;
+}
+
+.button-value:focus{
+    background-color: #ffbf00;
+    outline-color: transparent;
+    outline-style: solid;
+    box-shadow: 0 0 0 4px #ffbf00;
+}
+
+.button-value:active{
+    background-color: #ffbf00;
+}
+
 .active {
     background-color: deepskyblue;
     color: #ffffff;
